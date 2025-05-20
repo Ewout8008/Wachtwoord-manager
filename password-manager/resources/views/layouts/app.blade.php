@@ -43,6 +43,9 @@
         ul {
             padding-left: 1rem;
         }
+        main {
+            min-height: 60vh;
+        }
     </style>
 </head>
 <body>
@@ -52,6 +55,9 @@
             <div>
                 <a href="/dashboard" class="button">Dashboard</a>
                 <a href="/passwords/create" class="button">Nieuw wachtwoord</a>
+                <a href="/settings" class="button">Hoofdwachtwoord wijzigen</a>
+                
+
             </div>
             <div>
                 <a href="/logout" class="button">Uitloggen</a>
@@ -59,7 +65,9 @@
         </div>
     </header>
 
-    @yield('content')
+    <main>
+        @yield('content')
+    </main>
 
     <footer>
         <p>&copy; {{ date('Y') }} Jouw Naam</p>

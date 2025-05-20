@@ -1,22 +1,40 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <title>Nieuw wachtwoord toevoegen</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'Nieuw wachtwoord toevoegen')
+
+@section('content')
     <h1>Nieuw wachtwoord toevoegen</h1>
-    <form method="POST" action="{{ url('/passwords') }}">
+
+    <form method="POST" action="{{ url('/passwords') }}" style="max-width: 400px;">
         @csrf
-        <input type="text" name="username" placeholder="Gebruikersnaam" required><br>
-        <input type="url" name="url" placeholder="URL" required><br>
-        <input type="password" name="password" placeholder="Wachtwoord" required><br>
-        <input type="text" name="note" placeholder="Opmerking (optioneel)"><br>
-        <input type="text" name="category" placeholder="Categorie" required><br>
-        <input type="number" name="refresh_weeks" placeholder="Verversingsfrequentie (weken)"><br>
-        <button type="submit">Opslaan</button>
+
+        <label>Gebruikersnaam</label><br>
+        <input type="text" name="username" class="form-control" required><br>
+
+        <label>URL</label><br>
+        <input type="url" name="url" class="form-control" required><br>
+
+        <label>Wachtwoord</label><br>
+        <input type="password" name="password" class="form-control" required><br>
+
+        <label>Opmerking (optioneel)</label><br>
+        <input type="text" name="note" class="form-control"><br>
+
+        <label>Categorie</label><br>
+        <input type="text" name="category" class="form-control" required><br>
+
+        <label>Verversingsfrequentie (in weken)</label><br>
+        <input type="number" name="refresh_weeks" class="form-control"><br>
+
+        <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Opslaan</button>
+
     </form>
 
-    <a href="/dashboard">Terug naar dashboard</a>
-</body>
-</html>
+    @if($errors->any())
+        <ul style="color:red;">
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+@endsection
