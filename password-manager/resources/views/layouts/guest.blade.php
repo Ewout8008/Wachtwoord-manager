@@ -35,14 +35,6 @@
         a.button:hover, button:hover {
             background: #2980b9;
         }
-        .top-links {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-        }
-        ul {
-            padding-left: 1rem;
-        }
         main {
             min-height: 60vh;
         }
@@ -51,18 +43,6 @@
 <body>
     <header>
         <h1>Wachtwoord Manager</h1>
-        <div class="top-links">
-            <div>
-                <a href="/dashboard" class="button">Dashboard</a>
-                <a href="/passwords/create" class="button">Nieuw wachtwoord</a>
-                <a href="/settings" class="button">Hoofdwachtwoord wijzigen</a>
-                
-
-            </div>
-            <div>
-                <a href="/logout" class="button">Uitloggen</a>
-            </div>
-        </div>
     </header>
 
     <main>

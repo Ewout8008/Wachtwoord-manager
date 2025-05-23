@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <title>Inloggen</title>
-</head>
-<body>
-    <h1>Inloggen met hoofdwachtwoord</h1>
+@extends('layouts.guest')
+
+@section('title', 'Inloggen')
+
+@section('content')
+    <h2>Inloggen met hoofdwachtwoord</h2>
 
     <form method="POST" action="{{ url('/login') }}">
         @csrf
@@ -16,6 +14,4 @@
     @error('password')
         <p style="color: red;">{{ $message }}</p>
     @enderror
-
-</body>
-</html>
+@endsection
